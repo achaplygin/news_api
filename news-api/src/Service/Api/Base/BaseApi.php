@@ -15,9 +15,8 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 abstract class BaseApi
 {
-    protected const
-        FORM_CLASS = BaseNewsType::class,
-        ENUM_CLASS = BaseApiCategories::class;
+    protected const FORM_CLASS = BaseNewsType::class;
+    protected const ENUM_CLASS = BaseApiCategories::class;
 
     protected HttpClientInterface $httpClient;
     protected FormFactoryInterface $formFactory;
@@ -43,6 +42,7 @@ abstract class BaseApi
 
     public function prepareCategory(string $category): string
     {
+        /** @var $enum BaseApiCategories */
         $enum = static::ENUM_CLASS;
         return $enum::mapCommonToApiCategory($category);
     }

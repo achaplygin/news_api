@@ -4,26 +4,25 @@ namespace App\Enum\NewsCategory;
 
 class CurrentsCategories extends BaseApiCategories
 {
-    public const
-        REGIONAL      = 'regional',
-        TECHNOLOGY    = 'technology',
-        LIFESTYLE     = 'lifestyle',
-        BUSINESS      = 'business',
-        GENERAL       = 'general',
-        PROGRAMMING   = 'programming',
-        SCIENCE       = 'science',
-        ENTERTAINMENT = 'entertainment',
-        WORLD         = 'world',
-        SPORTS        = 'sports',
-        FINANCE       = 'finance',
-        ACADEMIA      = 'academia',
-        POLITICS      = 'politics',
-        HEALTH        = 'health',
-        OPINION       = 'opinion',
-        FOOD          = 'food',
-        GAME          = 'game';
+    public const REGIONAL      = 'regional';
+    public const TECHNOLOGY    = 'technology';
+    public const LIFESTYLE     = 'lifestyle';
+    public const BUSINESS      = 'business';
+    public const GENERAL       = 'general';
+    public const PROGRAMMING   = 'programming';
+    public const SCIENCE       = 'science';
+    public const ENTERTAINMENT = 'entertainment';
+    public const WORLD         = 'world';
+    public const SPORTS        = 'sports';
+    public const FINANCE       = 'finance';
+    public const ACADEMIA      = 'academia';
+    public const POLITICS      = 'politics';
+    public const HEALTH        = 'health';
+    public const OPINION       = 'opinion';
+    public const FOOD          = 'food';
+    public const GAME          = 'game';
 
-    public static array $categoryMapping = [
+    public const CATEGORY_MAPPING = [
         self::REGIONAL      => CommonCategories::WORLD,
         self::TECHNOLOGY    => CommonCategories::TECHNOLOGY,
         self::LIFESTYLE     => CommonCategories::ENTERTAINMENT,
@@ -55,7 +54,7 @@ class CurrentsCategories extends BaseApiCategories
         }
 
         $result = [];
-        foreach (self::$categoryMapping as $category => $common) {
+        foreach (self::CATEGORY_MAPPING as $category => $common) {
             if ($commonCategory === $common) {
                 $result[] = $category;
             }

@@ -1,17 +1,10 @@
 version: '2'
 
 services:
-  mariadb:
-    image: docker.io/bitnami/mariadb:10.3
-    environment:
-      # ALLOW_EMPTY_PASSWORD is recommended only for development.
-      - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_USER=bn_myapp
-      - MARIADB_DATABASE=bitnami_myapp
   app:
     image: docker.io/bitnami/symfony:4.4
     ports:
-      - '8000:8000'
+      - '80:8000'
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
@@ -21,5 +14,3 @@ services:
       - SYMFONY_DATABASE_NAME=bitnami_myapp
     volumes:
       - './news-api:/app'
-    depends_on:
-      - mariadb

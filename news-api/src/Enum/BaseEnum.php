@@ -9,7 +9,9 @@ abstract class BaseEnum
         $result = [];
         $ref = new \ReflectionClass(static::class);
         foreach ($ref->getReflectionConstants() as $classConstant) {
-            $result[$classConstant->getName()] = $classConstant->getValue();
+            if (is_string($classConstant->getValue())) {
+                $result[$classConstant->getName()] = $classConstant->getValue();
+            }
         }
 
         return $result;

@@ -4,22 +4,21 @@ namespace App\Enum\NewsCategory;
 
 class InshortsCategories extends BaseApiCategories
 {
-    public const
-        ALL           = 'all',
-        NATIONAL      = 'national', //Indian News only
-        BUSINESS      = 'business',
-        SPORTS        = 'sports',
-        WORLD         = 'world',
-        POLITICS      = 'politics',
-        TECHNOLOGY    = 'technology',
-        STARTUP       = 'startup',
-        ENTERTAINMENT = 'entertainment',
-        MISCELLANEOUS = 'miscellaneous',
-        HATKE         = 'hatke',
-        SCIENCE       = 'science',
-        AUTOMOBILE    = 'automobile';
+    public const ALL           = 'all';
+    public const NATIONAL      = 'national'; //Indian News only
+    public const BUSINESS      = 'business';
+    public const SPORTS        = 'sports';
+    public const WORLD         = 'world';
+    public const POLITICS      = 'politics';
+    public const TECHNOLOGY    = 'technology';
+    public const STARTUP       = 'startup';
+    public const ENTERTAINMENT = 'entertainment';
+    public const MISCELLANEOUS = 'miscellaneous';
+    public const HATKE         = 'hatke';
+    public const SCIENCE       = 'science';
+    public const AUTOMOBILE    = 'automobile';
 
-    public static array $categoryMapping = [
+    public const CATEGORY_MAPPING = [
         self::ALL           => CommonCategories::ALL,
         self::NATIONAL      => CommonCategories::WORLD,
         self::BUSINESS      => CommonCategories::BUSINESS,
@@ -41,6 +40,6 @@ class InshortsCategories extends BaseApiCategories
             return $commonCategory;
         }
 
-        return array_search($commonCategory, self::$categoryMapping, true) ?: self::ALL;
+        return array_search($commonCategory, self::CATEGORY_MAPPING, true) ?: self::ALL;
     }
 }

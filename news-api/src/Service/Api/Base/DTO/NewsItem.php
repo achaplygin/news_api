@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Service\Api\Base\DTO;
-
 
 class NewsItem
 {

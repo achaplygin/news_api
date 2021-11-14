@@ -9,9 +9,8 @@ use App\Service\Api\Base\DTO\NewsList;
 
 class InshortsApi extends BaseApi
 {
-    protected const
-        FORM_CLASS = InshortsNewsType::class,
-        ENUM_CLASS = InshortsCategories::class;
+    protected const FORM_CLASS = InshortsNewsType::class;
+    protected const ENUM_CLASS = InshortsCategories::class;
 
     public function getNews(string $category): ?NewsList
     {

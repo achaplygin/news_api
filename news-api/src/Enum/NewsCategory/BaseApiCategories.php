@@ -6,11 +6,11 @@ use App\Enum\BaseEnum;
 
 abstract class BaseApiCategories extends BaseEnum
 {
-    public static array $categoryMapping;
+    public const CATEGORY_MAPPING = [];
 
     public static function mapApiToCommonCategory(string $category): string
     {
-        return static::$categoryMapping[$category];
+        return static::CATEGORY_MAPPING[$category];
     }
 
     abstract public static function mapCommonToApiCategory(string $commonCategory): string;
