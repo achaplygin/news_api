@@ -1,0 +1,5 @@
+all_news:
+  path: /news/{category}
+  controller: App\Controller\Main::allNews
+  defaults:
+    _form_type: RequestNewsType
